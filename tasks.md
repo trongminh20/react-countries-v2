@@ -4,6 +4,7 @@
 - setting pages route [done]
 - state management with context [done]
 - create detail pate [done]
+- pagination [done]
 - styling [on progress]
 - searching [on progress]
 - filtering [on progress]
