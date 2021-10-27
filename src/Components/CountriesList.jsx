@@ -4,13 +4,19 @@ import { Switch, Link, Route } from 'react-router-dom';
 import Pagination from './Pagination';
 import ListItem from './ListItem';
 import CountryDetail from './CountryDetail';
+import { darkColor, lightColor } from './styles';
 export default function CountriesList() {
-    const { countriesListState, pageState, listState } = useContext(AppContext);
+    const { modeState,
+        countriesListState,
+        pageState,
+        listState,
+        styleState } = useContext(AppContext);
     // get state from app context
     const [countries, setCountries] = countriesListState;
     const [currentPage, setCurrentPage] = pageState;
     const [countriesEachPage, setCoutriesEachPage] = listState;
-
+    const [mode, setMode] = modeState;
+    const [style, setStyle] = styleState;
     // calculating for pagination 
     const lastIndex = currentPage * countriesEachPage;
     const firstIndex = lastIndex - countriesEachPage;
@@ -31,8 +37,10 @@ export default function CountriesList() {
         fetchCountries();
     }, [])
 
+
+
     return (
-        <div className="main-container">
+        <div className="main-container" style={(mode === "Light") ? darkColor : lightColor}>
             <Pagination _totalPages={countries.length} _paginate={paginate} _countriesEachPage={countriesEachPage} />
             <div className="countries-list">
 
@@ -50,6 +58,6 @@ export default function CountriesList() {
                 })}
 
             </div>
-        </div>
+        </div >
     )
 }
