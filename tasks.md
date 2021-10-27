@@ -1,0 +1,10 @@
+# main tasks
+- fetch API [done]
+- display data [done]
+- setting pages route [done]
+- state management with context [done]
+- create detail pate [done]
+- styling [on progress]
+- searching [on progress]
+- filtering [on progress]
+- switching mode [on progress]
