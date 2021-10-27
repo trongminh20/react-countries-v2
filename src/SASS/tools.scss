@@ -1,0 +1,6 @@
+.tools {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3rem;
+    @include flexDisplay(row, 1rem, space-between, center);
+}

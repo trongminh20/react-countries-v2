@@ -13,7 +13,6 @@ export default function App() {
             <div className="tools">
                 <Search />
                 <Filter />
-
             </div>
             <Switch>
                 <Route path="/" exact component={CountriesList} />

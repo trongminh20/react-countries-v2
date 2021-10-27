@@ -1,0 +1,14 @@
+.country-detail {
+    @include flexDisplay(row, 2rem, flex-start, center);
+    width: 90%;
+    margin: auto;
+    .flag {
+        width: 30%;
+        img {
+            width: 100%;
+        }
+    }
+    .info {
+        @include flexDisplay(column, 1rem, center, flex-start);
+    }
+}

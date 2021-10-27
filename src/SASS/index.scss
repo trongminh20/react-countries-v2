@@ -1,0 +1,19 @@
+@import "./reset.scss";
+@import "./font.scss";
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./header.scss";
+@import "./tools.scss";
+@import "./list.scss";
+@import "./countryDetail.scss";
+@import "./pagination.scss";
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+#root {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5rem;
+}
