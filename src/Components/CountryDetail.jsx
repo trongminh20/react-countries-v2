@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
 import { AppContext } from "./AppContext";
 import { buttonDark, buttonLight } from './styles';
 
@@ -20,7 +20,8 @@ export default function CountryDetail({ match }) {
             }).then(data => {
                 setCountryDetail(data);
             })
-    }, [])
+    }, [countryDetail])
+    console.log(match)
     return (
         <div className="country-container">
             <div className="back-btn">
@@ -54,11 +55,15 @@ export default function CountryDetail({ match }) {
                         <h4>Borders:</h4>
                         {
                             countryDetail.borders?.map(bd => {
-                                return <a onClick={() => window.location.href = "./" + bd}>
+                                // return <a onClick={() => window.location.href = "./" + bd}>
+                                //     <div style={(mode === "Light") ? buttonDark : buttonLight} className="tag">{bd}</div>
+                                // </a>
+                                return <Link to={`/${bd}`} >
                                     <div style={(mode === "Light") ? buttonDark : buttonLight} className="tag">{bd}</div>
-                                </a>
+                                </Link>
                             })
                         }
+
                     </div>
                 </div>
             </div>
