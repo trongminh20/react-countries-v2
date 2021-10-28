@@ -17,7 +17,7 @@ export default function Form() {
         if (keyword === "") {
             setCountries(data);
         } else {
-            const list = data.filter(d => d.name === keyword);
+            const list = data.filter(d => d.name.toLowerCase() === keyword.toLowerCase());
             setCountries(list);
         }
     }

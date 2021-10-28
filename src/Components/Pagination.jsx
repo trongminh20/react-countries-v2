@@ -18,14 +18,13 @@ export default function Pagination({ _totalPages, _countriesEachPage, _paginate 
     }
 
     return (
-        <div className="pagination-bar">
-            <select onChange={handleChange} style={(mode === "Dark") ? formLightMode : formDarkMode}>
-                {
-                    pageNumbers.map(pn => {
-                        return <option value={pn}>page {pn}</option>
-                    })
-                }
-            </select>
-        </div>
+        <select className="pagination" onChange={handleChange} style={(mode === "Dark") ? formLightMode : formDarkMode}>
+            {
+                pageNumbers.map(pn => {
+                    return <option value={pn}>page {pn}</option>
+                })
+            }
+        </select>
+
     )
 }

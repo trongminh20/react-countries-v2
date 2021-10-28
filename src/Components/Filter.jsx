@@ -14,7 +14,7 @@ export default function Filter() {
         setCountries(newList);
     }
     return (
-        <select onChange={handleChange} style={(mode === "Dark") ? formLightMode : formDarkMode}>
+        <select className="filter" onChange={handleChange} style={(mode === "Dark") ? formLightMode : formDarkMode}>
             <option value="Africa">Africa</option>
             <option value="Americas">America</option>
             <option value="Asia">Asia</option>

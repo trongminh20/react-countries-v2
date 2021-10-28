@@ -5,8 +5,7 @@ import { AppContext } from './Components/AppContext';
 import { Route, Switch } from 'react-router-dom';
 //components
 import Header from './Components/Header';
-import Search from "./Components/Search";
-import Filter from "./Components/Filter";
+
 import CountriesList from './Components/CountriesList';
 import CountryDetail from './Components/CountryDetail';
 //styling components
@@ -19,13 +18,9 @@ export default function App() {
     return (
         <section className='app' style={(mode === "Dark") ? lightColor : darkColor}>
             <Header />
-            <div className="tools">
-                <Search />
-                <Filter />
-            </div>
             <Switch>
                 <Route path="/" exact component={CountriesList} />
-                <Route path="/:alpha2code" component={CountryDetail} />
+                <Route path="/:alpha2code" exact component={CountryDetail} />
             </Switch>
         </section>
     )

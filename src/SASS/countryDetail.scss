@@ -1,14 +1,63 @@
-.country-detail {
-    @include flexDisplay(row, 2rem, flex-start, center);
-    width: 90%;
-    margin: auto;
-    .flag {
-        width: 30%;
-        img {
-            width: 100%;
+.country-container {
+    width: 100%;
+    @media (min-width: 800px) {
+        height: 100vh;
+    }
+    @include flexDisplay(column, 1rem, flex-start, flex-start);
+    .back-btn {
+        width: 100%;
+        height: 3rem;
+        margin-top: 2rem;
+        button {
+            // margin-left: 20%;
+            @media (min-width: 800px) {
+                margin-left: 10vw;
+            }
+            @media (max-width: 799px) {
+                margin-left: 10vw;
+            }
+            height: 2rem;
+            border: none;
+            width: 5rem;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
     }
-    .info {
-        @include flexDisplay(column, 1rem, center, flex-start);
+
+    .country-detail {
+        @include flexDisplay(row, 2rem, space-evenly, flex-start);
+        width: 70%;
+        @media (min-width: 800px) {
+            margin-left: 10vw;
+        }
+
+        @media (max-width: 799px) {
+            @include flexDisplay(column, 1rem, center, center);
+            width: 100%;
+            margin: auto;
+        }
+
+        .flag {
+            width: 40%;
+            margin-top: 3rem;
+            @media (max-width: 799px) {
+                width: 90%;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .info {
+            margin-top: 2rem;
+        }
+        .main-info {
+            width: 100%;
+            @include flexDisplay(row, 2rem, flex-start, flex-start);
+            @media (max-width: 799px) {
+                @include flexDisplay(column, 2rem, flex-start, flex-start);
+            }
+        }
+        .country-border {
+            @include flexDisplay(row, 1rem, flex-start, center);
+        }
     }
 }

@@ -1,8 +1,11 @@
-.pagination-bar {
-    width: 90%;
+.pagination {
+    width: 20%;
+    @media (max-width: 799px) {
+        width: 60%;
+    }
+    height: 3rem;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 2rem;
+    text-align: center;
+    border: none;
 }

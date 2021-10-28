@@ -1,28 +1,43 @@
 .main-container {
     @include flexDisplay(column, 1rem, flex-start, flex-start);
+    padding-bottom: 5rem;
 }
 .countries-list {
     width: 90%;
+    @media (max-width: 799px) {
+        width: 90%;
+    }
     margin: auto;
     @include flexDisplay(row, 2rem, center, center);
     row-gap: 2rem;
+    @media (max-width: 799px) {
+        @include flexDisplay(column, 2rem, center, center);
+    }
+
     a {
         width: 30%;
+        @media (max-width: 799px) {
+            width: 100%;
+        }
         text-decoration: none;
         color: black;
         .country {
             width: 100%;
             @include flexDisplay(column, 1rem, space-evenly, flex-start);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             &-flag {
-                border: 1px solid black;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 img {
                     width: 100%;
-                    height: 10rem;
+                    height: 15rem;
                     max-width: 100%;
                 }
+            }
+
+            .item-info {
+                margin-left: 1rem;
             }
         }
     }

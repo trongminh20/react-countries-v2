@@ -1,11 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from './AppContext';
-import { Switch, Link, Route } from 'react-router-dom';
+import { Switch, Link, Route, useHistory } from 'react-router-dom';
 import Pagination from './Pagination';
 import ListItem from './ListItem';
 import CountryDetail from './CountryDetail';
 import { darkColor, lightColor } from './styles';
-export default function CountriesList() {
+import Search from "./Search";
+import Filter from "./Filter";
+
+export default function CountriesList({ history }) {
+
     const { dataState, modeState,
         countriesListState,
         pageState,
@@ -41,6 +45,10 @@ export default function CountriesList() {
 
     return (
         <div className="main-container" style={(mode === "Light") ? darkColor : lightColor}>
+            <div className="tools">
+                <Search />
+                <Filter />
+            </div>
             <Pagination _totalPages={countries.length} _paginate={paginate} _countriesEachPage={countriesEachPage} />
             <div className="countries-list">
                 {currentCountriesList.map(c => {
@@ -55,7 +63,6 @@ export default function CountriesList() {
                         />
                     </Link>
                 })}
-
             </div>
         </div >
     )
