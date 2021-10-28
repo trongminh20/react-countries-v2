@@ -6,11 +6,13 @@ import ListItem from './ListItem';
 import CountryDetail from './CountryDetail';
 import { darkColor, lightColor } from './styles';
 export default function CountriesList() {
-    const { modeState,
+    const { dataState, modeState,
         countriesListState,
         pageState,
         listState,
         styleState } = useContext(AppContext);
+    //data
+    const [data, setData] = dataState;
     // get state from app context
     const [countries, setCountries] = countriesListState;
     const [currentPage, setCurrentPage] = pageState;
@@ -26,18 +28,16 @@ export default function CountriesList() {
     const fetchCountries = async () => {
         const data = await fetch('https://restcountries.com/v2/all');
         const dataToJson = await data.json();
-
+        setData(dataToJson);
         setCountries(dataToJson);
-        console.log(dataToJson);
     }
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
     useEffect(() => {
         fetchCountries();
+
     }, [])
-
-
 
     return (
         <div className="main-container" style={(mode === "Light") ? darkColor : lightColor}>

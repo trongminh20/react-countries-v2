@@ -17,10 +17,8 @@ export default function Pagination({ _totalPages, _countriesEachPage, _paginate 
         _paginate(e.target.value)
     }
 
-
     return (
         <div className="pagination-bar">
-
             <select onChange={handleChange} style={(mode === "Dark") ? formLightMode : formDarkMode}>
                 {
                     pageNumbers.map(pn => {
@@ -28,7 +26,6 @@ export default function Pagination({ _totalPages, _countriesEachPage, _paginate 
                     })
                 }
             </select>
-
         </div>
     )
 }

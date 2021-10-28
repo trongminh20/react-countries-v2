@@ -3,6 +3,8 @@ import React, { useState, createContext } from 'react';
 export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
+    //data fetched once
+    const [data, setData] = useState([]);
     //list of countries fetch from API
     const [countries, setCountries] = useState([]);
     //country detail 
@@ -24,6 +26,7 @@ export const AppContextProvider = (props) => {
 
     return (
         <AppContext.Provider value={{
+            dataState: [data, setData],
             countriesListState: [countries, setCountries],
             modeState: [mode, setMode],
             styleState: [style, setStyle],
