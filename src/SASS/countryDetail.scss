@@ -1,5 +1,7 @@
 .country-container {
     width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
     @media (min-width: 800px) {
         height: 100vh;
     }
@@ -20,6 +22,7 @@
             border: none;
             width: 5rem;
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            border-radius: 5px;
         }
     }
 
@@ -48,18 +51,32 @@
         }
         .info {
             margin-top: 2rem;
+            h1 {
+                @media (max-width: 799px) {
+                    margin-left: 2rem;
+                }
+            }
         }
         .main-info {
             width: 100%;
             @include flexDisplay(row, 2rem, flex-start, flex-start);
             @media (max-width: 799px) {
                 @include flexDisplay(column, 2rem, flex-start, flex-start);
+                margin-left: 2rem;
             }
         }
         .country-border {
             @include flexDisplay(row, 1rem, flex-start, center);
+            flex-wrap: wrap;
+            @media (max-width: 799px) {
+                margin-left: 2rem;
+            }
             .tag {
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                text-decoration: none;
+                border: none;
+                width: 3rem;
+                height: 2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
             }
         }
     }

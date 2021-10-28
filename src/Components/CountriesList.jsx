@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from './AppContext';
-import { Switch, Link, Route, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Pagination from './Pagination';
 import ListItem from './ListItem';
-import CountryDetail from './CountryDetail';
+
 import { darkColor, lightColor } from './styles';
 import Search from "./Search";
 import Filter from "./Filter";
@@ -13,8 +13,7 @@ export default function CountriesList() {
     const { dataState, modeState,
         countriesListState,
         pageState,
-        listState,
-        styleState } = useContext(AppContext);
+        listState } = useContext(AppContext);
     //data
     const [data, setData] = dataState;
     // get state from app context
@@ -22,7 +21,7 @@ export default function CountriesList() {
     const [currentPage, setCurrentPage] = pageState;
     const [countriesEachPage, setCoutriesEachPage] = listState;
     const [mode, setMode] = modeState;
-    const [style, setStyle] = styleState;
+
     // calculating for pagination 
     const lastIndex = currentPage * countriesEachPage;
     const firstIndex = lastIndex - countriesEachPage;

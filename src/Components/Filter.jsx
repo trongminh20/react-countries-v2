@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useEffect } from 'react/cjs/react.development';
 import { AppContext } from './AppContext';
 import { formDarkMode, formLightMode } from './styles';
 

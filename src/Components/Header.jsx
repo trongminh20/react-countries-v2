@@ -2,8 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from './AppContext';
 import { headerDark, headerLight, btnSwitchDark, btnSwitchLight } from './styles';
 export default function Header() {
-    const { styleState, modeState } = useContext(AppContext);
-    const [style, setStyle] = styleState;
+    const { modeState } = useContext(AppContext);
     const [mode, setMode] = modeState;
     const [switchIco, setSwitchIco] = useState("far fa-lightbulb");
 
