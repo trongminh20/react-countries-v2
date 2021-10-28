@@ -10,6 +10,7 @@ import CountriesList from './Components/CountriesList';
 import CountryDetail from './Components/CountryDetail';
 //styling components
 import { darkColor, lightColor } from './Components/styles';
+import CopyRight from './Components/CopyRight';
 
 export default function App() {
     const { modeState } = useContext(AppContext);
@@ -22,6 +23,7 @@ export default function App() {
                 <Route path="/" exact component={CountriesList} />
                 <Route path="/:alpha2code" exact component={CountryDetail} />
             </Switch>
+            <CopyRight />
         </section>
     )
 }
