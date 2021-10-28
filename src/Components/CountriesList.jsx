@@ -43,7 +43,6 @@ export default function CountriesList() {
         <div className="main-container" style={(mode === "Light") ? darkColor : lightColor}>
             <Pagination _totalPages={countries.length} _paginate={paginate} _countriesEachPage={countriesEachPage} />
             <div className="countries-list">
-
                 {currentCountriesList.map(c => {
                     const { alpha2Code, flag, name, population, capital, region } = c;
                     return <Link to={`/${alpha2Code}`}>

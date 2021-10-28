@@ -4,3 +4,26 @@
     margin-bottom: 3rem;
     @include flexDisplay(row, 1rem, space-between, center);
 }
+
+.search {
+    width: 15%;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    .search-input {
+        border: none;
+        background: none;
+        width: 80%;
+    }
+
+    .search-btn {
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        padding: 2px;
+        color: hsl(0, 0%, 52%);
+    }
+}
