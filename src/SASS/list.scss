@@ -9,6 +9,7 @@
     }
     margin: auto;
     @include flexDisplay(row, 2rem, center, center);
+    flex-wrap: wrap;
     row-gap: 2rem;
     @media (max-width: 799px) {
         @include flexDisplay(column, 2rem, center, center);
