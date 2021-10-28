@@ -2,12 +2,15 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from "./AppContext";
 import { buttonDark, buttonLight } from './styles';
+
 export default function CountryDetail({ match }) {
     const { detailState, modeState } = useContext(AppContext);
     const [countryDetail, setCountryDetail] = detailState;
     const [mode, setMode] = modeState;
+
+
     useEffect(() => {
-        fetch(`https://restcountries.com/v2/alpha/${match.params.alpha2code}`)
+        fetch(`https://restcountries.com/v2/alpha/${match.params.alpha3code}`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -18,7 +21,6 @@ export default function CountryDetail({ match }) {
                 setCountryDetail(data);
             })
     }, [])
-    console.log(countryDetail);
     return (
         <div className="country-container">
             <div className="back-btn">
@@ -52,8 +54,9 @@ export default function CountryDetail({ match }) {
                         <h4>Borders:</h4>
                         {
                             countryDetail.borders?.map(bd => {
-                                return <div className="tag">{bd}</div>
-                                // return <button>{bd}</button>
+                                return <a onClick={() => window.location.href = "./" + bd}>
+                                    <div style={(mode === "Light") ? buttonDark : buttonLight} className="tag">{bd}</div>
+                                </a>
                             })
                         }
                     </div>

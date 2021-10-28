@@ -8,7 +8,7 @@ import { darkColor, lightColor } from './styles';
 import Search from "./Search";
 import Filter from "./Filter";
 
-export default function CountriesList({ history }) {
+export default function CountriesList() {
 
     const { dataState, modeState,
         countriesListState,
@@ -52,14 +52,14 @@ export default function CountriesList({ history }) {
             <Pagination _totalPages={countries.length} _paginate={paginate} _countriesEachPage={countriesEachPage} />
             <div className="countries-list">
                 {currentCountriesList.map(c => {
-                    const { alpha2Code, flag, name, population, capital, region } = c;
-                    return <Link to={`/${alpha2Code}`}>
+                    const { alpha3Code, flag, name, population, capital, region } = c;
+                    return <Link to={`/${alpha3Code}`}>
                         <ListItem flag={flag}
                             name={name}
                             population={population}
                             region={region}
                             capital={capital}
-                            code={alpha2Code}
+                            code={alpha3Code}
                         />
                     </Link>
                 })}

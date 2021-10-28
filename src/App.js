@@ -21,7 +21,8 @@ export default function App() {
             <Header />
             <Switch>
                 <Route path="/" exact component={CountriesList} />
-                <Route path="/:alpha2code" exact component={CountryDetail} />
+                <Route path="/:alpha3code" exact component={CountryDetail} />
+                {/* <Route path="/country/:alpha3code" component={CountryDetail} /> */}
             </Switch>
             <CopyRight />
         </section>
